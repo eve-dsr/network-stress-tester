@@ -22,13 +22,13 @@ if [ -f "/etc/debian_version" ]; then
         sudo apt-get install -y dsniff > /dev/null 2>&1 || echo "[!] Could not install dsniff."
         echo "[i] We will now install psmisc..."
         sudo apt-get install -y psmisc > /dev/null 2>&1 || echo "[!] Could not install psmisc."
-        echo "[i] We will now download Raven-Storm..."
-        sudo git clone https://github.com/Taguar258/Raven-Storm.git > /dev/null 2>&1 || echo "[!] Could not download Raven-Storm."
-        cd Raven-Storm > /dev/null 2>&1
+        echo "[i] We will now download Network Stress Tester..."
+        sudo git clone https://github.com/eve-dsr/network-stress-tester.git > /dev/null 2>&1 || echo "[!] Could not download Network Stress Tester."
+        cd network-stress-tester > /dev/null 2>&1
         echo "[i] We will now install requirements..."
         sudo pip3 install -r requirements.txt  > /dev/null 2>&1 || echo "[!] Could not install the requirements."
-        echo "[i] We will now install Raven-Storm..."
-        sudo bash ./install_to_bin.sh || echo "[!] Could not install Raven-Storm."
+        echo "[i] We will now install Network Stress Tester..."
+        sudo bash ./install_to_bin.sh || echo "[!] Could not install Network Stress Tester."
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         echo "[i] Detected darwin."
         echo "[i] We will now install brew if not existing..."
@@ -48,14 +48,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         echo "[i] We will now install dsniff..."
         sudo brew install dsniff > /dev/null 2>&1  || echo "[!] Could not install dsniff."
         # psmisc already preinstalled for sure.
-        echo "[i] We will now download Raven-Storm..."
-        sudo git clone https://github.com/Taguar258/Raven-Storm.git > /dev/null 2>&1  || echo "[!] Could not download Raven-Storm."
-        cd Raven-Storm > /dev/null 2>&1
+        echo "[i] We will now download Network Stress Tester..."
+        sudo git clone https://github.com/eve-dsr/network-stress-tester.git > /dev/null 2>&1  || echo "[!] Could not download Network Stress Tester."
+        cd network-stress-tester > /dev/null 2>&1
         echo "[i] We will now install requirements..."
         sudo pip3 install -r requirements.txt  > /dev/null 2>&1 || echo "[!] Could not install the requirements."
-        echo "[i] We will now install Raven-Storm..."
-        sudo bash ./install_to_bin.sh  || echo "[!] Could not install Raven-Storm."
-elif [ -f "/etc/arch-release" ]; then  # FIXME
+        echo "[i] We will now install Network Stress Tester..."
+        sudo bash ./install_to_bin.sh  || echo "[!] Could not install Network Stress Tester."
+elif [ -f "/etc/arch-release" ]; then
         echo "[i] Detected Arch based Linux."
         echo "[i] We will now install git..."
         sudo pacman --noconfirm -S git > /dev/null 2>&1  || echo "[!] Could not install git."
@@ -73,20 +73,20 @@ elif [ -f "/etc/arch-release" ]; then  # FIXME
         sudo pacman --noconfirm -S dsniff > /dev/null 2>&1  || echo "[!] Could not install dsniff."
         echo "[i] We will now install psmisc..."
         sudo pacman --noconfirm -S psmisc > /dev/null 2>&1 || echo "[!] Could not install psmisc."
-        echo "[i] We will now download Raven-Storm..."
-        sudo git clone https://github.com/Taguar258/Raven-Storm.git > /dev/null 2>&1  || echo "[!] Could not download Raven-Storm."
-        cd Raven-Storm > /dev/null 2>&1
+        echo "[i] We will now download Network Stress Tester..."
+        sudo git clone https://github.com/eve-dsr/network-stress-tester.git > /dev/null 2>&1  || echo "[!] Could not download Network Stress Tester."
+        cd network-stress-tester > /dev/null 2>&1
         echo "[i] We will now install requirements..."
         sudo pip3 install -r requirements.txt  > /dev/null 2>&1 || echo "[!] Could not install the requirements."
-        echo "[i] We will now install Raven-Storm..."
-        sudo bash ./install_to_bin.sh || echo "[!] Could not install Raven-Storm."
+        echo "[i] We will now install Network Stress Tester..."
+        sudo bash ./install_to_bin.sh || echo "[!] Could not install Network Stress Tester."
 elif [[ "$OSTYPE" == "win32" ]]; then
         echo "[!] Please run on wsl."
 else
         echo "[!] We could not detect your system."
         echo "[i] Please install some things manually"
-        git clone https://github.com/Taguar258/Raven-Storm.git > /dev/null 2>&1 || echo "[!] Please install git"
-        cd Raven-Storm
+        git clone https://github.com/eve-dsr/network-stress-tester.git > /dev/null 2>&1 || echo "[!] Please install git"
+        cd network-stress-tester
         python3 --help > /dev/null 2>&1 || echo "[!] Please install python3."
         command -v ping > /dev/null 2>&1 || echo "[!] Please install ping."
         command -v l2ping > /dev/null 2>&1 || echo "[!] Please install bluez."
